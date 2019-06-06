@@ -1,18 +1,26 @@
 #!/usr/bin/env sh
-# https://vuepress.vuejs.org/guide/deploy.html#github-pages
 
 # abort on errors
 set -e
 
 # build
-sudo vuepress build docs
+#npm run docs:build
+yarn docs:build
 
 # navigate into the build output directory
-cd docs
+cd docs/.vuepress/dist
 
-# Push changes
+# if you are deploying to a custom domain
+# echo 'www.example.com' > CNAME
+
+git init
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:kayoku/powerapi-doc.git master:gh-pages
+
+# if you are deploying to https://<USERNAME>.github.io
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+
+# if you are deploying to https://<USERNAME>.github.io/<REPO>
+git push -f git@github.com:Kayoku/powerapi-doc.git master:gh-pages
 
 cd -
