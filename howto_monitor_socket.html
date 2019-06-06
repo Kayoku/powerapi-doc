@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>How to monitor power consumption of a socket | PowerAPI</title>
+    <meta name="description" content="PowerAPI documentation.">
+    
+    
+    <link rel="preload" href="/powerapi-doc/assets/css/0.styles.3cdd15d1.css" as="style"><link rel="preload" href="/powerapi-doc/assets/js/app.d5220592.js" as="script"><link rel="preload" href="/powerapi-doc/assets/js/2.68cf461d.js" as="script"><link rel="preload" href="/powerapi-doc/assets/js/7.f5cbdc2a.js" as="script"><link rel="prefetch" href="/powerapi-doc/assets/js/10.3fa139c5.js"><link rel="prefetch" href="/powerapi-doc/assets/js/3.4e51276d.js"><link rel="prefetch" href="/powerapi-doc/assets/js/4.4cf084c7.js"><link rel="prefetch" href="/powerapi-doc/assets/js/5.c9d28340.js"><link rel="prefetch" href="/powerapi-doc/assets/js/6.a7fbfe5c.js"><link rel="prefetch" href="/powerapi-doc/assets/js/8.ee533614.js"><link rel="prefetch" href="/powerapi-doc/assets/js/9.418d8020.js">
+    <link rel="stylesheet" href="/powerapi-doc/assets/css/0.styles.3cdd15d1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/powerapi-doc/" class="home-link router-link-active"><!----> <span class="site-name">PowerAPI</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/powerapi-ng/powerapi" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/powerapi-ng/powerapi" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>PowerAPI</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/powerapi-doc/powerapi_howitworks.html" class="sidebar-link">PowerAPI - How it works ?</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Sensor</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/powerapi-doc/hwpc.html" class="sidebar-link">HWPC Sensor</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Formula</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/powerapi-doc/rapl.html" class="sidebar-link">RAPL Formula</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Howto</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/powerapi-doc/howto_monitor_socket.html" class="active sidebar-link">How to monitor power consumption of a socket</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/powerapi-doc/howto_monitor_socket.html#introduction" class="sidebar-link">Introduction</a></li><li class="sidebar-sub-header"><a href="/powerapi-doc/howto_monitor_socket.html#compatible-architecture" class="sidebar-link">Compatible Architecture</a></li><li class="sidebar-sub-header"><a href="/powerapi-doc/howto_monitor_socket.html#power-meter-description" class="sidebar-link">Power meter description</a></li><li class="sidebar-sub-header"><a href="/powerapi-doc/howto_monitor_socket.html#data-and-database" class="sidebar-link">Data and database</a></li><li class="sidebar-sub-header"><a href="/powerapi-doc/howto_monitor_socket.html#get-power-meter-result" class="sidebar-link">Get power meter result</a></li><li class="sidebar-sub-header"><a href="/powerapi-doc/howto_monitor_socket.html#deployment-with-docker" class="sidebar-link">Deployment with docker</a></li><li class="sidebar-sub-header"><a href="/powerapi-doc/howto_monitor_socket.html#deployment-without-docker" class="sidebar-link">Deployment without docker</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="how-to-monitor-power-consumption-of-a-socket"><a href="#how-to-monitor-power-consumption-of-a-socket" aria-hidden="true" class="header-anchor">#</a> How to monitor power consumption of a socket</h1> <h2 id="introduction"><a href="#introduction" aria-hidden="true" class="header-anchor">#</a> Introduction</h2> <p>This tutorial presents how to assemble a formula (RAPL-formula) and a sensor
+(HWPC-sensor) to build a power meter that monitor the power consumption of each
+CPU socket.</p> <p>First of all, we describe the power meter that we want to build. Then, we
+describe how to deploy the power meter's component and how to connect
+them. Each component could be deployed with docker or directly by installing it
+on the system.</p> <h2 id="compatible-architecture"><a href="#compatible-architecture" aria-hidden="true" class="header-anchor">#</a> Compatible Architecture</h2> <p>The power meter will use hardware counters that exist only on Intel CPU with
+Sandy Bridge architecture or higher. The power meter can't be used without
+theses counters.</p> <h2 id="power-meter-description"><a href="#power-meter-description" aria-hidden="true" class="header-anchor">#</a> Power meter description</h2> <p>Power meter estimations are based on the Running Average Power Limit (RAPL)
+technology. RAPL provide a set of hardware counters that report data about the
+current energy consumption of each CPU socket. The power meter use the
+HWPC-sensor to collect these data and send them to the RAPL-formula to compute
+the current energy consumption of monitored sockets.</p> <p>Each component of the power meter could be hosted on a different machine. In
+this tutorial, we assume that each component are hosted on the same machine.</p> <h2 id="data-and-database"><a href="#data-and-database" aria-hidden="true" class="header-anchor">#</a> Data and database</h2> <p>As explained <a href="/powerapi-doc/howto/powerapi_howitworks.html#power-meter-architecture">here</a> The power
+meter need two mongoDB databases to connect the formula to the sensor and to
+store the power consumption information computed by the formula.</p> <p>We assume that this two databases are hosted on the same mongoDB instance but
+different instances could be used for each database. In the rest of its
+tutorial, the URI of the mongoDB instance will be <code>mongo://ADDR</code></p> <p>The first database (that connect the formula and the sensor) will be called
+<code>connection_db</code> and the data will be store on the <code>hwrep</code> collection.</p> <p>The second database (that store power consumption computed by the formula) will
+be called <code>output_db</code> and data will be stored on the <code>power_consumption</code>
+collection.</p> <h2 id="get-power-meter-result"><a href="#get-power-meter-result" aria-hidden="true" class="header-anchor">#</a> Get power meter result</h2> <p>To access to the power consumption information computed by the power meter just
+connect a mongo client to the mongoDB instance and retrieve the data of the
+<code>power_consumption</code> collection of the <code>output_db</code> database.</p> <p>Power information data are structured as this json format :</p> <pre><code>{
+    &quot;_id&quot; : XXX # MongoDB object identifier (string)
+    &quot;timestamp&quot; : YYY # timestamp of the power measure (iso date)
+    &quot;metadata&quot; : {
+            &quot;socket&quot; : &quot;N&quot;, # socket identifier (int)
+    },
+    &quot;power&quot; : Z.ZZZ # power consumption expressed in watts (float)
+}
+</code></pre> <p>For example to display a power consumption report with the mongo client :</p> <pre><code>mongo ADDR
+use output_db
+db.power_consumption.findOne()
+</code></pre> <h2 id="deployment-with-docker"><a href="#deployment-with-docker" aria-hidden="true" class="header-anchor">#</a> Deployment with docker</h2> <p>This section present how to deploy and connect each component of the power
+meter with docker. You will see how to :</p> <ul><li>deploy a mongoDB instance in a docker container</li> <li>deploy the HWPC-sensor in a docker container and connect it to the mongoDB instance</li> <li>deploy the RAPL-formula in a docker container and connect it to the mongoDB instance</li></ul> <h3 id="setup-docker-environment"><a href="#setup-docker-environment" aria-hidden="true" class="header-anchor">#</a> Setup docker environment</h3> <p>Download components image :</p> <pre><code>docker pull powerapi/hwpc-sensor
+docker pull powerapi/rapl-formula
+docker pull mongo
+</code></pre> <p>Setup a docker network that will be used to connect each containers</p> <pre><code>docker network create powerapi
+</code></pre> <h3 id="launch-the-different-component"><a href="#launch-the-different-component" aria-hidden="true" class="header-anchor">#</a> Launch the different component</h3> <p>Launch the mongoDB instance :</p> <pre><code>docker run -td --name powerapi-mongo --net=powerapi -p 27017:27017 mongo
+</code></pre> <p>Launch the sensor :</p> <pre><code>docker run --net=powerapi --privileged --name powerapi-sensor -td -v /sys:/sys -v /var/lib/docker/containers:/var/lib/docker/containers:ro -v /tmp/powerapi-sensor-reporting:/reporting powerapi/hwpc-sensor -n &quot;test-sensor&quot; -r &quot;mongodb&quot; -U &quot;mongodb://powerapi-mongo&quot; -D &quot;connection_db&quot; -C &quot;hwrep&quot; -s &quot;rapl&quot; -o -e &quot;RAPL_ENERGY_CORES&quot; -e &quot;RAPL_ENERGY_PKG&quot; -e &quot;RAPL_ENERGY_GPU&quot;
+</code></pre> <p>Launch the formula :</p> <pre><code>docker run -td --net=powerapi --name powerapi-formula powerapi/rapl-formula mongodb://powerapi-mongo connection_db hwrep mongodb://powerapi-mongo output_db power_consumption -s
+</code></pre> <h2 id="deployment-without-docker"><a href="#deployment-without-docker" aria-hidden="true" class="header-anchor">#</a> Deployment without docker</h2> <p>This section present how to deploy and connect each component of the power
+meter without docker, by installing each of them on the monitored machine. You
+will see how to :</p> <ul><li>compile the HWPC-sensor and connect it to an existing mongoDB instance</li> <li>install the RAPL-formula and connect it to an existing mongoDB instance</li> <li>launch the sensor and the formula from the command line</li></ul> <h3 id="prerequisites"><a href="#prerequisites" aria-hidden="true" class="header-anchor">#</a> Prerequisites</h3> <ul><li>python 3.7</li> <li>pip</li> <li>a mongoDB instance runing and accessible from the address <code>mongodb://ADDR</code></li> <li>root privilege to launch the sensor</li></ul> <h3 id="component-installation"><a href="#component-installation" aria-hidden="true" class="header-anchor">#</a> Component installation</h3> <p>install the sensor from sources</p> <pre><code>git clone https://github.com/powerapi-ng/hwpc-sensor.git
+cd hwpc-sensor
+cmake .
+make
+</code></pre> <p>install the RAPL-formula</p> <pre><code>pip3 install rapl-formula
+</code></pre> <h3 id="launch-the-different-component-2"><a href="#launch-the-different-component-2" aria-hidden="true" class="header-anchor">#</a> Launch the different component</h3> <p>On the HWPC-sensor repository launch the sensor :</p> <pre><code>sudo ./hwpc-sensor -n &quot;sensor&quot; -r &quot;mongodb&quot; -U &quot;mongodb://ADDR&quot; -D &quot;connection_db&quot; -C &quot;hwrep&quot; -s &quot;rapl&quot; -o -e &quot;RAPL_ENERGY_CORES&quot; -e &quot;RAPL_ENERGY_PKG&quot; -e &quot;RAPL_ENERGY_GPU&quot; &amp;
+</code></pre> <p>launch the formula</p> <pre><code>python3 -m rapl_formula mongodb://ADDR connection_db hwrep mongodb://ADDR output_db power_consumption -s &amp;
+</code></pre></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/powerapi-doc/rapl.html" class="prev">
+          RAPL Formula
+        </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/powerapi-doc/assets/js/app.d5220592.js" defer></script><script src="/powerapi-doc/assets/js/2.68cf461d.js" defer></script><script src="/powerapi-doc/assets/js/7.f5cbdc2a.js" defer></script>
+  </body>
+</html>
